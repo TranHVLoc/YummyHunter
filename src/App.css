@@ -1,0 +1,42 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-family: Avenir,Century Gothic,sans-serif;
+  font-size: calc(2vmin);
+  font-style: normal;
+  font-weight: 100;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 40px;
+}
+
+div {
+  display: block;
+}
+
+.Card, .List {
+  border-radius: 24px;
+  font-size: medium;
+  text-align: center;
+}
+
+.app-row {
+  flex-direction: row;
+  gap: 10px 20px;
+  padding-right: 40px;
+  align-items: center;
+  display: flex;
+}
+
+.app-page {
+  padding-left: 300px;
+  top: 0;
+}

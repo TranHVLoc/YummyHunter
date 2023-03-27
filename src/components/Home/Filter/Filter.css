@@ -1,0 +1,7 @@
+.filter {
+    display: flex;
+    margin: 20px;
+}
+button {
+    border-radius: 20px;
+}
