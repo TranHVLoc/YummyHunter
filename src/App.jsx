@@ -7,7 +7,7 @@ import Card from './components/Home/Card/Card'
 import Filter from './components/Home/Filter/Filter'
 import Table from './components/Home/Table/Table'
 
-const ACCESS_KEY = import.meta.env.VITE_APP_API_KEY 
+const API_KEY = import.meta.env.VITE_APP_API_KEY
 
 function App() {
 
@@ -27,9 +27,8 @@ function App() {
   useEffect(() => {
     const fetchAllRecipeData = async () => {
       const response = await fetch(
-        // `https://api.spoonacular.com/recipes?apiKey=${API_KEY}${inputVal === "" ? "" : "&query=" + inputVal}&maxFat=105`
-        // `https://api.spoonacular.com/recipes/complexSearch?apiKey=${ACCESS_KEY}&minCalories=105`
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=2937d7b708e34ad7bbd366d5eac13c59&minCalories=0&number=100`
+        // `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&minCalories=0&maxCalories=1000&number=5`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=15c7acf394544de79912a0027b8bab31&minCalories=0&maxCalories=1000&number=100`
       )
 
       const json = await response.json()
@@ -55,6 +54,27 @@ function App() {
     }
   }
 
+
+  const filterRange = () => {
+    if (min !== 0 || max !== 1000) {
+      const filteredData = output.results.filter((item) =>
+        item.nutrition.nutrients[0].amount >= min && item.nutrition.nutrients[0].amount <= max
+      )
+      setFilterResults(filteredData)
+    } else {
+      setFilterResults(output.results)
+    }
+  }
+
+  const handleChildData = ({childMin, childMax}) => {
+    setMin(childMin)
+    setMax(childMax)
+  }
+
+  useEffect(() => {
+    console.log(min, " ", max)
+  }, [input])
+  
   return (
     <div className="App">
       <SideBar />
@@ -71,14 +91,17 @@ function App() {
           />
           <Card
             header="500kCal+ Dishes Founded"
-            // data={output.results.filter((dish) => dish.nutrition.nutrients[0].amount > 500).length}
+            data={63}
           />
         </div>
 
         <div className='app-row'>
           <div className='List'>
             <Filter
-              handleChange = {(e) => searchItems(e.target.value)}
+              handleSearch = {(e) => searchItems(e.target.value)}
+
+              // handleRange = {filterRange}
+              handleChildData = {handleChildData}
 
               min = {min}
               max = {max}

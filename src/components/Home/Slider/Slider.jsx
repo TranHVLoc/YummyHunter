@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import "./Slider.css";
 
-const Slider = ({ min, max, onChange }) => {
+const Slider = ({ min, max, onChange, handleChildData }) => {
   const [minVal, setMinVal] = useState(min);
   const [maxVal, setMaxVal] = useState(max);
   const minValRef = useRef(min);
@@ -24,6 +24,7 @@ const Slider = ({ min, max, onChange }) => {
       range.current.style.left = `${minPercent}%`;
       range.current.style.width = `${maxPercent - minPercent}%`;
     }
+
   }, [minVal, getPercent]);
 
   // Set width of the range to decrease from the right side
@@ -34,11 +35,16 @@ const Slider = ({ min, max, onChange }) => {
     if (range.current) {
       range.current.style.width = `${maxPercent - minPercent}%`;
     }
+
   }, [maxVal, getPercent]);
 
   // Get min and max values when their state changes
   useEffect(() => {
     onChange({ min: minVal, max: maxVal });
+
+    // handleChildData({childMin: minVal, childMax: maxVal})
+    // handleRange()
+
   }, [minVal, maxVal, onChange]);
 
   return (

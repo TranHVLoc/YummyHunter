@@ -23,7 +23,7 @@ const Table = ({ list }) => {
                                     className='recipe-pic'
                                     src={element.image}
                                     alt="Recipe Picturez"
-                                    width="100"
+                                    // width="100"
                                 />
                             </td>
                         </tr>
