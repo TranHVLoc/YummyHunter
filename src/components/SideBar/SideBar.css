@@ -46,6 +46,7 @@ li {
 }
 
 a {
+    text-decoration: none;
     align-items: center;
     color: #fff;
     display: flex;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
 import './App.css'
+import CaloriesChart from './components/Detail/Chart/CaloriesChart'
 
-import SideBar from './components/SideBar/SideBar'
 import Card from './components/Home/Card/Card'
 import Filter from './components/Home/Filter/Filter'
 import Table from './components/Home/Table/Table'
@@ -27,8 +27,7 @@ function App() {
   useEffect(() => {
     const fetchAllRecipeData = async () => {
       const response = await fetch(
-        // `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&minCalories=0&maxCalories=1000&number=5`
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=15c7acf394544de79912a0027b8bab31&minCalories=0&maxCalories=1000&number=100`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&minCalories=0&maxCalories=1000&number=100`
       )
 
       const json = await response.json()
@@ -55,6 +54,7 @@ function App() {
   }
 
 
+
   const filterRange = () => {
     if (min !== 0 || max !== 1000) {
       const filteredData = output.results.filter((item) =>
@@ -71,13 +71,15 @@ function App() {
     setMax(childMax)
   }
 
-  useEffect(() => {
-    console.log(min, " ", max)
-  }, [input])
+  // useEffect(() => {
+  //   console.log(min, " ", max)
+  // }, [input])
   
+
+
+
   return (
     <div className="App">
-      <SideBar />
 
       <div className='app-page'>
         <div className='app-row'>
@@ -94,6 +96,9 @@ function App() {
             data={63}
           />
         </div>
+
+        <h2>Here are the top healthy Vietnamese recipes</h2>
+        <CaloriesChart />
 
         <div className='app-row'>
           <div className='List'>
@@ -119,6 +124,7 @@ function App() {
           </div>
         </div>
       </div>
+      
     </div>
   )
 }

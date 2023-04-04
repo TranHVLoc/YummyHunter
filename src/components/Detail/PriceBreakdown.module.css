@@ -1,0 +1,13 @@
+.my-custom-class input,
+.my-custom-class a,
+.my-custom-class label {
+  display: none;
+}
+
+.my-custom-class {
+    background-color: rgb(211, 211, 211);
+    border-radius: 10px;
+    width: 800px;
+    margin-left: 50px;
+    height: 100%;
+}

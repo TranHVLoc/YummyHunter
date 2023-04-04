@@ -5,6 +5,7 @@
     box-shadow: 0 15px 25px hsla(0,2%,50%,.2);
     margin-bottom: 30px;
     width: 300px;
+    padding: 10px;
 }
 
 p {

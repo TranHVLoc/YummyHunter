@@ -26,6 +26,11 @@ div {
   border-radius: 24px;
   font-size: medium;
   text-align: center;
+
+  backdrop-filter: blur(4px);
+  background-color: hsla(0,0%,100%,.092);
+  box-shadow: 0 15px 25px hsla(0,2%,50%,.154);
+  border-radius: 20px;
 }
 
 .app-row {
@@ -46,16 +51,12 @@ img {
   width: 300px;
 }
 
-.table {
-  width: 1000px;
-  text-align: center;
-  text-decoration: wavy;
+.labelNPrice {
+  display: flex;
+  padding: 10px;
 }
 
-tr {
-  width: 150%;
+.labelNPrice canvas {
+  position: absolute;
 }
 
-thead, tbody {
-  margin-top: 100px;
-}
