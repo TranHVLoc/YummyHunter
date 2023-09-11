@@ -1,28 +1,19 @@
-# Web Development Project 6 - *YummyHunter*
+# Web Development Project - *YummyHunter*
 
-Submitted by: **Loc Tran**
+By: **Loc Tran**
 
 This web app: **A place where people can search and filter new delicious and nutritious recipe for their next meal as well as to see more about the nutrition fact and price breakdown for each recipe**
 
-Time spent: **8** hours spent in total
-
 ## Required Features
 
-The following **required** functionality is completed:
+The following functionalities included:
 
-- [x] **The app includes at least two unique chart developed using the fetched data that tell an interesting story**
-- [x] **Clicking on an item in the list view displays more details about it**
-- [x] **Clicking on an item has a direct, unique link to that item's detail view page**
-
-
-The following **optional** features are implemented:
-
+- [x] The app includes at least two unique chart developed using the fetched data that tell an interesting story
+- [x] Clicking on an item in the list view displays more details about it
+- [x] Clicking on an item has a direct, unique link to that item's detail view page
 - [x] The site's customized dashboard contains more content that explains what is interesting about the data
 - [x] The site allows users to toggle between different data visualizations
-
-The following **additional** features are implemented:
-
-* [x] Each recipe contains a nutrition label as image and an interactive chart so view more its price breakdown
+- [x] Each recipe contains a nutrition label as image and an interactive chart so view more its price breakdown
 
 ## Video Walkthrough
 
